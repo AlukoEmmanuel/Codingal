@@ -1,0 +1,64 @@
+class Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+
+def run_quiz(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer.lower() == question.answer.lower():
+            score += 1
+    print(f"You got {score} out of {len(questions)} correct!")
+
+question_prompts = [
+    "What is the capital of France?\n(a) Paris\n(b) London\n(c) Rome\n\n",
+    "What is 2 + 2?\n(a) 3\n(b) 4\n(c) 5\n\n",
+    "What is the capital of Germany?\n(a) Berlin\n(b) Madrid\n(c) Lisbon\n\n"
+]
+
+questions = [
+    Question(question_prompts[0], "a"),
+    Question(question_prompts[1], "b"),
+    Question(question_prompts[2], "a")
+]
+
+run_quiz(questions)
+class Question:
+    def __init__(self, prompt, answer, options):
+        self.prompt = prompt
+        self.answer = answer
+        self.options = options
+
+def run_quiz(questions):
+    score = 0
+    for question in questions:
+        print(question.prompt)
+        for option in question.options:
+            print(option)
+        answer = input("Enter your answer: ")
+        if answer.lower() == question.answer.lower():
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is {question.answer}")
+    print(f"You got {score} out of {len(questions)} correct!")
+
+question_prompts = [
+    "What is the capital of Nigeria?",
+    "Who is the current president of Nigeria?",
+    "What is the largest city in Nigeria?"
+]
+
+options = [
+    ["(a) Abuja", "(b) Lagos", "(c) Kano"],
+    ["(a) Muhammadu Buhari", "(b) Goodluck Jonathan", "(c) Tinubu"],
+    ["(a) Lagos", "(b) Abuja", "(c) Ibadan"]
+]
+
+questions = [
+    Question(question_prompts[0], "a", options[0]),
+    Question(question_prompts[1], "a", options[1]),
+    Question(question_prompts[2], "a", options[2])
+]
+
+run_quiz(questions)

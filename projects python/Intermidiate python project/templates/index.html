@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <form id="recommend-form">
+            <input type="text" name="movie_title" placeholder="Enter a movie title" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div id="recommendations"></div>
+
+        <button id="popular-btn">Show Popular Movies</button>
+        <div id="popular-movies"></div>
+    </div>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
